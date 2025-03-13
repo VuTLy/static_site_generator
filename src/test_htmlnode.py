@@ -21,5 +21,27 @@ class TestHTMLNode(unittest.TestCase):
             " href=\"https://www.google.com\" target=\"_blank\"", node.props_to_html()
         )
 
+    def test_values(self):
+        node = HTMLNode(
+            "div",
+            "I wish I could read",
+        )
+        self.assertEqual(
+            node.tag,
+            "div",
+        )
+        self.assertEqual(
+            node.value,
+            "I wish I could read",
+        )
+        self.assertEqual(
+            node.children,
+            None,
+        )
+        self.assertEqual(
+            node.props,
+            None,
+        )
+
 if __name__ == "__main__":
     unittest.main()
